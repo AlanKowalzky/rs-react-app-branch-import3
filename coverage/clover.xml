@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1739127602949" clover="3.2.0">
-  <project timestamp="1739127602949" name="All files">
+<coverage generated="1739142578835" clover="3.2.0">
+  <project timestamp="1739142578835" name="All files">
     <metrics statements="24" coveredstatements="23" conditionals="8" coveredconditionals="7" methods="9" coveredmethods="9" elements="41" coveredelements="39" complexity="0" loc="24" ncloc="24" packages="1" files="3" classes="3"/>
-    <file name="ErrorBoundary.tsx" path="C:\progRSschool2\rs-react-app-import3\src\components\ErrorBoundary.tsx">
+    <file name="ErrorBoundary.tsx" path="C:\progRSschool2\rs-react-app-import3-pag\src\components\ErrorBoundary.tsx">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <line num="12" count="3" type="stmt"/>
       <line num="17" count="4" type="stmt"/>
@@ -12,7 +12,7 @@
       <line num="27" count="4" type="stmt"/>
       <line num="30" count="3" type="stmt"/>
     </file>
-    <file name="ErrorButton.tsx" path="C:\progRSschool2\rs-react-app-import3\src\components\ErrorButton.tsx">
+    <file name="ErrorButton.tsx" path="C:\progRSschool2\rs-react-app-import3-pag\src\components\ErrorButton.tsx">
       <metrics statements="7" coveredstatements="7" conditionals="2" coveredconditionals="2" methods="3" coveredmethods="3"/>
       <line num="9" count="1" type="stmt"/>
       <line num="10" count="1" type="stmt"/>
@@ -22,7 +22,7 @@
       <line num="19" count="4" type="stmt"/>
       <line num="22" count="1" type="stmt"/>
     </file>
-    <file name="Search.tsx" path="C:\progRSschool2\rs-react-app-import3\src\components\Search.tsx">
+    <file name="Search.tsx" path="C:\progRSschool2\rs-react-app-import3-pag\src\components\Search.tsx">
       <metrics statements="10" coveredstatements="9" conditionals="4" coveredconditionals="3" methods="3" coveredmethods="3"/>
       <line num="6" count="3" type="stmt"/>
       <line num="10" count="3" type="stmt"/>
