@@ -1,9 +1,4 @@
 {
-  "extends": "./tsconfig.app.json",
-  "compilerOptions": {
-    "jsx": "react-jsx",
-    "esModuleInterop": true
-  },
   "files": [],
   "references": [
     { "path": "./tsconfig.app.json" },

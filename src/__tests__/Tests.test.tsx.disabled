@@ -1,0 +1,59 @@
+import React from 'react';
+import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import Header from '../components/Header';
+import Search from '../components/Search';
+import Results from '../components/Results';
+import ErrorBoundary from '../components/ErrorBoundary';
+import ErrorButton from '../components/ErrorButton';
+import '@testing-library/jest-dom';
+
+jest.mock('../components/Results', () => {
+  return function MockResults({ searchTerm }: { searchTerm: string }) {
+    return <div data-testid="results">Results for: {searchTerm}</div>;
+  };
+});
+
+describe('Search Component', () => {
+  test('calls onSearch with entered text', () => {
+    const mockOnSearch = jest.fn();
+    render(<Search onSearch={mockOnSearch} />);
+    const input = screen.getByPlaceholderText(/Enter your search term.../i);
+    const button = screen.getByText(/Search/i);
+
+    fireEvent.change(input, { target: { value: 'charizard' } });
+    fireEvent.click(button);
+
+    expect(mockOnSearch).toHaveBeenCalledWith('charizard');
+  });
+});
+
+describe('ErrorBoundary Component', () => {
+  test('displays error message when error occurs', () => {
+    const ThrowError = () => {
+      throw new Error('Test error');
+    };
+
+    render(
+      <ErrorBoundary>
+        <ThrowError />
+      </ErrorBoundary>
+    );
+
+    expect(screen.getByText(/Something went wrong/i)).toBeInTheDocument();
+  });
+});
+
+describe('ErrorButton Component', () => {
+  test('throws an error when clicked', () => {
+    render(
+      <ErrorBoundary>
+        <ErrorButton />
+      </ErrorBoundary>
+    );
+
+    const button = screen.getByText(/Generate Error/i);
+    fireEvent.click(button);
+
+    expect(screen.getByText(/Something went wrong/i)).toBeInTheDocument();
+  });
+});
