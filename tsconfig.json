@@ -2,7 +2,12 @@
   "extends": "./tsconfig.app.json",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "esModuleInterop": true
+    "esModuleInterop": true,
+    "baseUrl": ".",   // Ustawienie bazowego katalogu dla ścieżek
+    "paths": {
+      "@/*": ["src/*"] // Alias @ wskazuje na katalog src
+    }
+    
   },  
   "files": [],
   "references": [
