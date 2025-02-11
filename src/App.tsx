@@ -19,8 +19,8 @@ const App: React.FC = () => {
   useEffect(() => {
     const fetchPokemons = async () => {
       try {
-        // Pobieranie danych dla bieżącej strony
-        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=40&offset=${(page - 1) * 20}`);
+        
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon?limit=10&offset=${(page - 1) * 20}`);
         const data = await response.json();
 
         // Pobieranie szczegółów dla każdego Pokémona
