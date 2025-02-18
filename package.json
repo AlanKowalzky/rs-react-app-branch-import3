@@ -3,7 +3,7 @@
   "homepage": "https://AlanKowalzky.github.io/rs-react-app-branch-import3",
   "private": true,
   "version": "0.0.0",
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "test:ui": "vest --ui",
     "test": "vitest",
@@ -24,7 +24,8 @@
     "@vitejs/plugin-react": "^4.3.4",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
-    "react-router-dom": "^7.1.5"
+    "react-router-dom": "^7.1.5",
+    "vue": "^3.5.13"
   },
   "devDependencies": {
     "@babel/preset-env": "^7.26.8",

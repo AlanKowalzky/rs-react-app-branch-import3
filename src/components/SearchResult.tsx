@@ -1,29 +1,27 @@
-// src/components/SearchResult.tsx
-import React from 'react';
-
-interface Pokemon {
-  name: string;
-  sprites: { front_default: string };
-  types: { type: { name: string } }[];
-}
+// SearchResult.tsx
+import React from "react";
+import { Pokemon } from "../types";
 
 interface SearchResultProps {
   pokemons: Pokemon[];
   searchTerm: string;
+  onSelect: (pokemon: Pokemon) => void; // Dodano prop onSelect
 }
 
-const SearchResult: React.FC<SearchResultProps> = ({ pokemons, searchTerm }) => {
-  const filteredPokemons = pokemons.filter((pokemon) =>
-    pokemon.name.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-
+const SearchResult: React.FC<SearchResultProps> = ({ pokemons, searchTerm, onSelect }) => {
   return (
     <div className="character-list">
-      {filteredPokemons.length === 0 ? (
-        <p>No Pokémon found</p>
+      {pokemons.length === 0 ? (
+        <div className="error">
+          Nie znaleziono Pokémonów pasujących do "{searchTerm}"
+        </div>
       ) : (
-        filteredPokemons.map((pokemon) => (
-          <div key={pokemon.name} className="pokemon-card">
+        pokemons.map((pokemon) => (
+          <div
+            key={pokemon.name}
+            className="pokemon-card"
+            onClick={() => onSelect(pokemon)} // Dodano onClick
+          >
             <img
               src={pokemon.sprites.front_default}
               alt={pokemon.name}
